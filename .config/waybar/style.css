@@ -46,8 +46,12 @@ tooltip label {
 #center,
 #right {
     padding: 2px;
-    background-color: @bg0;
     border-radius: 50px;
+    background: transparent;
+}
+
+#center {
+    background-color: @bg0;
     border: 1px solid @bgc1;
 }
 
@@ -55,6 +59,13 @@ tooltip label {
     color: @ac1;
 }
 
+#right {
+	margin: 2px 8px 2px 2px;
+}
+
+#left {
+	margin: 2px 2px 2px 8px;
+}
 #custom-osicon {
     background-color: @bg0;
     color: @fg;
