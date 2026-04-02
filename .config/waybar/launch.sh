@@ -1,8 +1,8 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-killall -9 waybar
-killall -9 swaync
-killall -9 hyprpaper
+pkill -9 waybar
+pkill -9 swaync
+pkill -9 hyprpaper
 waybar &
 swaync &
 hyprpaper &
