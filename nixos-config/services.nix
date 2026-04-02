@@ -14,6 +14,7 @@
       sddm = {
         enable = true;
 	wayland.enable = true;
+	theme = "pixie";
       };
       defaultSession = "hyprland";
     };

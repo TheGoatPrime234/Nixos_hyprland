@@ -22,7 +22,7 @@
   services.tailscale.enable = true;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
+  security.pam.services.sddm.enableKwallet = true;
   hardware.bluetooth.enable = true;
   # Enable networking
   networking.networkmanager.enable = true;

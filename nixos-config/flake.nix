@@ -19,6 +19,7 @@
 	  ./apps.nix
 	  ./programs.nix
 	  ./services.nix
+#	  ./syspack.nix
         ];
       };
     };

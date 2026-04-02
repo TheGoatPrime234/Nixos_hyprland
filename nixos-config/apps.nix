@@ -17,8 +17,16 @@
     spotify
     discord
     obsidian
-    brave
     steam
+    (pkgs.symlinkJoin {
+      name = "brave";
+      paths = [ pkgs.brave ];
+      buildInputs = [ pkgs.makeWrapper ];
+      postBuild = ''
+        wrapProgram $out/bin/brave \
+          --add-flags "--password-store=basic"
+       '';
+    })
 
     # Hyprland Setup
     hyprland
