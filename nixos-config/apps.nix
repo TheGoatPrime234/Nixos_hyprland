@@ -24,10 +24,13 @@
       buildInputs = [ pkgs.makeWrapper ];
       postBuild = ''
         wrapProgram $out/bin/brave \
-          --add-flags "--password-store=basic"
-       '';
+          --add-flags "--password-store=basic" \
+          --add-flags "--disable-gpu-sandbox" \
+          --add-flags "--use-gl=egl" \
+          --add-flags "--enable-features=UseOzonePlatform" \
+          --add-flags "--ozone-platform=wayland"
+      '';
     })
-
     # Hyprland Setup
     hyprland
     hyprpaper
