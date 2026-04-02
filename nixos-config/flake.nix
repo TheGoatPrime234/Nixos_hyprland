@@ -18,6 +18,7 @@
 	  ./fonts.nix
 	  ./apps.nix
 	  ./programs.nix
+	  ./services.nix
         ];
       };
     };
