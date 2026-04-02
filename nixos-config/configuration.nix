@@ -73,10 +73,6 @@
     nvidiaBusId = "PCI:1:0:0";
   };  
   # Hyprland
-  programs.hyprland = {
-    enable = true;
-    xwayland.enable = true;
-  };
   services.displayManager.defaultSession = "hyprland";
 
   environment.sessionVariables = {
@@ -124,9 +120,6 @@
   };
 
   # Install firefox.
-  programs.firefox.enable = true;
-
-  programs.zsh.enable = true;
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
   services.blueman.enable = true;
