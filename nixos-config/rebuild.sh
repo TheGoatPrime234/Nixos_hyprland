@@ -12,7 +12,7 @@ else
 	COMMIT_MSG="$1"
 fi
 
-if git diff --cached --quit; then
+if git diff --cached --quiet; then
 	echo "Rebuild erfolgreich, aber keine neuen Änderungen zum Commiten"
 else    
 	cd ~
