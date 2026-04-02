@@ -46,13 +46,6 @@
   };
 
   # Enable the X11 windowing system.
-  services.xserver = {
-    enable = true;
-    videoDrivers = ["nvidia"];
-    displayManager.sddm.enable = true;
-    displayManager.sddm.wayland.enable = true;
-  };
-
   hardware = {
     graphics = {
       enable = true;
@@ -73,7 +66,6 @@
     nvidiaBusId = "PCI:1:0:0";
   };  
   # Hyprland
-  services.displayManager.defaultSession = "hyprland";
 
   environment.sessionVariables = {
     LIBVA_DRIVE_NAME = "nvidia";
@@ -84,31 +76,8 @@
     NIXOS_OZONE_WL = "1";
   };
 
-
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "de";
-    variant = "";
-  };
-
   # Configure console keymap
   console.keyMap = "de";
-
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
-
-  # Enable sound with pipewire.
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-  };
-
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
-
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.cato = {
     isNormalUser = true;
@@ -122,7 +91,6 @@
   # Install firefox.
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-  services.blueman.enable = true;
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   # Some programs need SUID wrappers, can be configured further or are
