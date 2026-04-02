@@ -26,7 +26,8 @@
   hardware.bluetooth.enable = true;
   # Enable networking
   networking.networkmanager.enable = true;
-
+  xdg.portal.enable = true;
+  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-hyprland ];
   # Set your time zone.
   time.timeZone = "Europe/Berlin";
 
