@@ -1,7 +1,7 @@
 { config, pkgs, ...}: 
 
 {
-  fonts.packages = [
-    pkgs.nerd-fonts.geist-mono
+  fonts.packages = with pkgs; [
+    (nerdfonts.override { fonts = [ "GeistMono" ]; })
   ];
 }
