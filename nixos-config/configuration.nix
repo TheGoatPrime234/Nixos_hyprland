@@ -103,7 +103,6 @@
   services.printing.enable = true;
 
   # Enable sound with pipewire.
-  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -131,7 +130,7 @@
   programs.zsh.enable = true;
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-
+  services.blueman.enable = true;
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -142,6 +141,7 @@
     git
     tailscale
     pciutils
+    pavucontrol
 
     spotify
     discord
@@ -160,6 +160,8 @@
     zsh
     rofi
     hyprpaper
+    hyprlock
+    wlogout
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

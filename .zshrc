@@ -117,8 +117,11 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 alias cl='clear'
 alias suspend='sudo systemctl suspend'
 alias cb='cd ..'
+
 alias hyprconf='nvim ~/.config/hypr/hyprland.conf'
 alias hyprbinds='nvim ~/.config/hypr/binds.conf'
 alias zshconf='nvim ~/.zshrc'
+alias nixconf='sudo nvim /etc/nixos/configuration.nix'
+
 alias f='fastfetch'
 alias carrun='cargo run'
