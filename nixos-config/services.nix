@@ -33,6 +33,7 @@
     };  
     dbus.enable = true;
     upower.enable = true;
+    gnome.gnome-keyring.enable = true;
     printing.enable = true;
   };  
 }
