@@ -2,6 +2,6 @@
 
 {
   fonts.packages = [
-    pkgs.nerd-fonts.geist-mono
+    pkgs.nerdfonts.geist-mono
   ];
 }
