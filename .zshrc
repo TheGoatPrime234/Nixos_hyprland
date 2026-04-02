@@ -125,3 +125,4 @@ alias nixconf='sudo nvim /etc/nixos/configuration.nix'
 
 alias f='fastfetch'
 alias carrun='cargo run'
+alias nixre='cd ~/nixos-config&&./rebuild.sh'

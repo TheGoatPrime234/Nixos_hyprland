@@ -4,7 +4,7 @@ set -e
 cd ~/nixos-config
 git add . 
 echo "Starte Rebuild..."
-sudo nixos-rebuild switch --flake .#nixos
+sudo nixos-rebuild switch --flake .#nixos --quiet
 
 if [ -z "$1" ]; then
 	COMMIT_MSG="Auto-Rebuild: $(date +'%Y-%m-%d %H:%M:%S')"
