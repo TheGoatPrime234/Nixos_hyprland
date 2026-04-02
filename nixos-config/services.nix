@@ -31,6 +31,8 @@
     tailscale = {
       enable = true;
     };  
+    dbus.enable = true;
+    upower.enable = true;
     printing.enable = true;
   };  
 }
