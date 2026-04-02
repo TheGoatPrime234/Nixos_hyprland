@@ -10,6 +10,7 @@
     tailscale
     pciutils
     pavucontrol
+    syncthing
 
     # Daily Use
     spotify
