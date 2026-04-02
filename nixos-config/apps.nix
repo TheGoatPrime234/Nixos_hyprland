@@ -10,7 +10,8 @@
     tailscale
     pciutils
     pavucontrol
-    syncthing
+    efibootmgr
+    gparted
 
     # Daily Use
     spotify
@@ -18,7 +19,6 @@
     obsidian
     brave
     steam
-    whatsapp-electron
 
     # Hyprland Setup
     hyprland

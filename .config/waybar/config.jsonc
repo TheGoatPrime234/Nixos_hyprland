@@ -91,7 +91,7 @@
         ]
     },
     "network": {
-        "interface": "wlan0",
+        "interface": "wlo1",
         "format-wifi": "",
         "format-ethernet": "󰊗",
         "format-disconnected": "", //An empty format will hide the module.
