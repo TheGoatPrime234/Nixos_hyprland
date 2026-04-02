@@ -16,6 +16,6 @@ if git diff --cached --quiet; then
 	echo "Rebuild erfolgreich, aber keine neuen Änderungen zum Commiten"
 else    
 	cd ~
-	git commit -am "$COMMIT_MSG"
+	git commit -m "$COMMIT_MSG"
 	echo "Rebuild erfolgreich und erfolgreich committet: $COMMIT_MSG"
 fi
