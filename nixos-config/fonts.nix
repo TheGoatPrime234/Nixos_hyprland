@@ -1,7 +1,7 @@
 { config, pkgs, ...}: 
 
 {
-  fonts.packages = with pkgs; [
-    nerd-fonts.geist-mono
+  fonts.packages = [
+    pkgs.nerd-fonts.geist-mono
   ];
 }
