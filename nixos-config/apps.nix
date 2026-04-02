@@ -18,6 +18,7 @@
     obsidian
     brave
     steam
+    whatsapp-electron
 
     # Hyprland Setup
     hyprland
