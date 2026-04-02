@@ -18,20 +18,13 @@
     discord
     obsidian
     steam
-    (pkgs.symlinkJoin {
-      name = "brave";
-      paths = [ pkgs.brave ];
-      buildInputs = [ pkgs.makeWrapper ];
-      postBuild = ''
-        wrapProgram $out/bin/brave \
-          --add-flags "--password-store=basic" \
-          --add-flags "--disable-gpu-sandbox" \
-          --add-flags "--disable-gpu" \
-          --add-flags "--enable-features=UseOzonePlatform" \
-          --add-flags "--ozone-platform=wayland"
-      '';
-    })
-
+    (pkgs.brave.overrideAttrs (old: {
+      version = "1.79.119";
+      src = pkgs.fetchurl {
+        url = "https://github.com/brave/brave-browser/releases/download/v1.79.119/brave-browser_1.79.119_amd64.deb";
+        sha256 = "sha256-8uX8byw/rp+yj6Y2qBemEHGwt4CQepWjVD8F9KuJZbI=";
+      };
+    }))
     # Hyprland Setup
     hyprland
     hyprpaper
