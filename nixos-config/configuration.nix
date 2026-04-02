@@ -133,37 +133,6 @@
   services.blueman.enable = true;
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    # Wichtig
-    neovim    
-    wget
-    fastfetch
-    git
-    tailscale
-    pciutils
-    pavucontrol
-
-    spotify
-    discord
-    obsidian
-    brave
-    steam
-
-    # Hyprland Setup
-    hyprland
-    waybar
-    grim
-    slurp
-    wl-clipboard
-    swaynotificationcenter
-    kitty
-    zsh
-    rofi
-    hyprpaper
-    hyprlock
-    wlogout
-  ];
-
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;

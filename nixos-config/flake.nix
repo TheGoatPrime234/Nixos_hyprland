@@ -15,6 +15,7 @@
           # Hier laden wir deine alten Dateien in die Flake
           ./hardware-configuration.nix
           ./configuration.nix
+	  ./apps.nix
         ];
       };
     };
