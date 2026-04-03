@@ -15,7 +15,6 @@
     zip
     unzip
     syncthing
-    nautilus
 
     # Daily Use
     spotify
@@ -37,7 +36,6 @@
     kitty
     zsh
     rofi
-    cava
     playerctl
   ];
 }
