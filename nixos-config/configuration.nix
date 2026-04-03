@@ -23,7 +23,6 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   security.pam.services.sddm.enableKwallet = true;
-  hardware.bluetooth.enable = true;
   # Enable networking
   networking.networkmanager.enable = true;
   xdg.portal.enable = true;
@@ -46,27 +45,6 @@
     LC_TIME = "de_DE.UTF-8";
   };
 
-  # Enable the X11 windowing system.
-  hardware = {
-    graphics = {
-      enable = true;
-      extraPackages = with pkgs; [
-        nvidia-vaapi-driver
-      ];
-    };
-    nvidia = {
-      modesetting.enable = true;
-      open = true;
-      powerManagement.enable = true;
-    };  
-  };
-
-   hardware.nvidia.prime = {
-    sync.enable = true;
-    intelBusId = "PCI:0:2:0";
-    nvidiaBusId = "PCI:1:0:0";
-  };  
-  # Hyprland
 
   environment.sessionVariables = {
     LIBVA_DRIVE_NAME = "nvidia";

@@ -13,8 +13,9 @@
     displayManager = {
       sddm = {
         enable = true;
-	wayland.enable = true;
-	theme = "pixie";
+	wayland = {
+	  enable = true;
+	};  
       };
       defaultSession = "hyprland";
     };
@@ -24,7 +25,9 @@
         enable = true;
 	support32Bit = true;
       };
-      pulse.enable = true;
+      pulse = {
+        enable = true;
+      };	
     };
     blueman = {
       enable = true;
@@ -32,11 +35,25 @@
     tailscale = {
       enable = true;
     }; 
-    syncthing.enable = true;
-    dbus.enable = true;
-    upower.enable = true;
-    gnome.gnome-keyring.enable = true;
-    printing.enable = true;
-    flatpak.enable = true;
+    syncthing = {
+      enable = true;
+    };  
+    dbus = {
+      enable = true;
+    };  
+    upower = {
+      enable = true;
+    };  
+    gnome = {
+      gnome-keyring = {
+        enable = true;
+      };
+    };  
+    printing = {
+      enable = true;
+    };  
+    flatpak = {
+      enable = true;
+    };  
   };  
 }
