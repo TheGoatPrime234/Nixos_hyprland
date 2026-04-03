@@ -11,6 +11,7 @@
       enable = true;
       xwayland.enable = true;
     };
+    hyprlock.enable = true;
     firefox = {
       enable = true;
     };
