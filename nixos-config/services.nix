@@ -31,7 +31,8 @@
     };
     tailscale = {
       enable = true;
-    };  
+    }; 
+    syncthing.enable = true;
     dbus.enable = true;
     upower.enable = true;
     gnome.gnome-keyring.enable = true;
