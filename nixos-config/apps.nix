@@ -24,6 +24,7 @@
     vscode
 
     # Hyprland Setup
+    ## sddm --> pixiesddm
     hyprland
     hyprpaper
     hyprlock

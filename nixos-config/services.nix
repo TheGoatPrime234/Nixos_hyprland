@@ -13,6 +13,7 @@
     displayManager = {
       sddm = {
         enable = true;
+	theme = "pixie";
 	wayland = {
 	  enable = true;
 	};  
