@@ -36,7 +36,6 @@
     kitty
     zsh
     rofi
-    cava
     playerctl
   ];
 }
