@@ -37,6 +37,5 @@
     zsh
     rofi
     cava
-    cavalier
   ];
 }

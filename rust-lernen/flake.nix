@@ -19,9 +19,16 @@
           rustfmt       # Formatiert den Code 
           clippy        # Sucht nach Fehlern 
           rust-analyzer # VS Code / Neovim Integration
+	  cargo-generate
+
+	  # Wayland
+	  wayland
+	  libxkbcommon
+	  libGL
         ];
 
         shellHook = ''
+	  export LD_LIBRARY_PATH="${pkgs.wayland}/lib:${pkgs.libGL}/lib:${pkgs.libxkbcommon}/lib:$LD_LIBRARY_PATH"
           echo "🦀 Hello Rust 🦀"
         '';
       };

@@ -118,11 +118,16 @@ alias cl='clear'
 alias suspend='sudo systemctl suspend'
 alias cb='cd ..'
 
+# Confs
 alias hyprconf='nvim ~/.config/hypr/hyprland.conf'
 alias hyprbinds='nvim ~/.config/hypr/binds.conf'
 alias zshconf='nvim ~/.zshrc'
 alias nixconf='sudo nvim /etc/nixos/configuration.nix'
+alias appconf='nvim ~/nixos-config/apps.nix'
 
 alias f='fastfetch'
 alias carrun='cargo run'
+
+# Nix
 alias nxre='cd ~/nixos-config&&./rebuild.sh'
+alias vflake='nvim flake.nix'
