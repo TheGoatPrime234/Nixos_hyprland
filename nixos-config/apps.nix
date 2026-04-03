@@ -15,6 +15,7 @@
     zip
     unzip
     syncthing
+    nautilus
 
     # Daily Use
     spotify
