@@ -12,6 +12,9 @@
     pavucontrol
     efibootmgr
     gparted
+
+    ## Files
+    yazi
     zip
     unzip
     syncthing
