@@ -1,6 +1,8 @@
 { config, pkgs, ... }: 
 
 let
+
+  my-wallpaper = ./dracula2.jpg;
   pixie-sddm-theme = pkgs.stdenv.mkDerivation {
     pname = "pixie-sddm";
     version = "1.0";
@@ -13,9 +15,10 @@ let
     installPhase = ''
       mkdir -p $out/share/sddm/themes/pixie
       cp -r ./* $out/share/sddm/themes/pixie/
-      
-      # NEU: Der magische Fix! Wir sagen SDDM explizit, dass es ein Qt6-Theme ist.
       echo "QtVersion=6" >> $out/share/sddm/themes/pixie/metadata.desktop
+      cp ${my-wallpaper} $out/share/sddm/themes/pixie/my-bg.jpg
+      
+      sed -i 's/^[bB]ackground=.*/Background=my-bg.jpg/' $out/share/sddm/themes/pixie/theme.conf
     '';
   };
 in
