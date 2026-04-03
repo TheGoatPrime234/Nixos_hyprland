@@ -1,3 +1,3 @@
-cp waybar/current.css ~/.config/waybar/current.css
-cp swaync/current.css ~/.config/swaync/current.css
-cp rofi/current.rasi ~/.config/rofi/current.rasi
+cp ~/.config/rice/themes/catpuccin/waybar/current.css ~/.config/waybar/current.css
+cp ~/.config/rice/themes/catpuccin/swaync/current.css ~/.config/swaync/current.css
+cp ~/.config/rice/themes/catpuccin/rofi/current.rasi ~/.config/rofi/current.rasi
