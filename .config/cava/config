@@ -160,7 +160,7 @@ max_height = 75
 # 'sdl' uses the Simple DirectMedia Layer to render in a graphical context.
 # 'sdl_glsl' uses SDL to create an OpenGL context. Write your own shaders or
 # use one of the predefined ones.
-; method = noncurses
+method = noncurses
 
 # Orientation of the visualization. Can be 'bottom', 'top', 'left', 'right' or
 # 'horizontal'. Default is 'bottom'. 'left and 'right' are only supported on sdl
@@ -255,10 +255,10 @@ max_height = 75
 # Gradient mode, only hex defined colors are supported,
 # background must also be defined in hex or remain commented out. 1 = on, 0 = off.
 # You can define as many as 8 different colors. They range from bottom to top of screen
-; gradient = 1
-; gradient_color_1 = '#59cc33'
-; gradient_color_2 = '#80cc33'
-; gradient_color_3 = '#a6cc33'
+gradient = 1
+gradient_color_1 = '#bd93f9''
+gradient_color_2 = '#8be9fd'
+gradient_color_3 = '#ff79c6'
 ; gradient_color_4 = '#cccc33'
 ; gradient_color_5 = '#cca633'
 ; gradient_color_6 = '#cc8033'
@@ -268,10 +268,10 @@ max_height = 75
 
 # Horizontal is only supported on noncurses output.
 # Only one color will be calculated per bar.
-horizontal_gradient = 1
-horizontal_gradient_color_1 = '#bd93f9'
-horizontal_gradient_color_2 = '#8be9fd'
-horizontal_gradient_color_3 = '#ff79c6'
+; horizontal_gradient = 1
+; horizontal_gradient_color_1 = '#bd93f9'
+; horizontal_gradient_color_2 = '#8be9fd'
+; horizontal_gradient_color_3 = '#ff79c6'
 ; horizontal_gradient_color_4 = '#f2dde1'
 ; horizontal_gradient_color_5 = '#cbc7d8'
 ; horizontal_gradient_color_6 = '#8db7d2'
