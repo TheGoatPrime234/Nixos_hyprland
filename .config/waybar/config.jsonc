@@ -45,7 +45,7 @@
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{count_weeks}</small></tt>\n{calendar}"
     },
     "custom/osicon": {
-        "format": "",
+        "format": "",
         "tooltip": false
     },
     "hyprland/workspaces": {

@@ -2,7 +2,7 @@
   description = "1. Rust devShell";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
   };
 
   outputs = { self, nixpkgs }: 
@@ -20,6 +20,7 @@
           clippy        # Sucht nach Fehlern 
           rust-analyzer # VS Code / Neovim Integration
 	  cargo-generate
+	  openssl_oqs
 
 	  # Wayland
 	  wayland
