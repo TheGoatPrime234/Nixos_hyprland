@@ -13,6 +13,7 @@
     efibootmgr
     gparted
     zip
+    unzip
     syncthing
 
     # Daily Use
