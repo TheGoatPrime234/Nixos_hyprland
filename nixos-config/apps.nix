@@ -42,5 +42,6 @@
     rofi
     cava
     playerctl
+    librsvg
   ];
 }
