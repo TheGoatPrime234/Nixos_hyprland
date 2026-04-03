@@ -38,5 +38,6 @@
     zsh
     rofi
     cava
+    playerctl
   ];
 }
