@@ -2,7 +2,7 @@
 
 let
 
-  my-wallpaper = ./wall.jpg;
+  my-wallpaper = ./my-bg.jpg;
   pixie-sddm-theme = pkgs.stdenv.mkDerivation {
     pname = "pixie-sddm";
     version = "1.0";
