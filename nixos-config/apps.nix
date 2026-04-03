@@ -12,12 +12,16 @@
     pavucontrol
     efibootmgr
     gparted
+    zip
+    syncthing
 
     # Daily Use
     spotify
     discord
     obsidian
     steam
+    vscode
+
     # Hyprland Setup
     hyprland
     hyprpaper
