@@ -10,7 +10,14 @@
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
     in
-    {
+    { 
+      packages."x86_64-linux".default = pkgs.rustPlatform.buildRustPackage {
+        name = "themeswitcher";
+	src = ./.;
+	buildInputs = [pkgs.glib ];
+	nativeBuildInputs = [pkgs.pkg-config ];
+
+      };	
       devShells.${system}.default = pkgs.mkShell {
         
         buildInputs = with pkgs; [

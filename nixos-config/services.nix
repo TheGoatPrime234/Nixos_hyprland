@@ -38,6 +38,9 @@
     }; 
     syncthing = {
       enable = true;
+      user = "cato";
+      dataDir = "/home/cato/Documents/Vaults";
+      configDir = "/home/cato/.config/syncthing";
     };  
     dbus = {
       enable = true;
