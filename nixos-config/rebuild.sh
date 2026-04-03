@@ -14,10 +14,8 @@ fi
 
 if git diff --cached --quiet; then
 	echo "Rebuild erfolgreich, aber keine neuen Änderungen zum Commiten"
-	notify-send "Rebuild erfolgreich, aber kein commit"
 else    
 	cd ~
 	git commit -m "$COMMIT_MSG"
 	echo "Rebuild erfolgreich und erfolgreich committet: $COMMIT_MSG"
-	notify-send "Rebuild erfolgreich: $COMMIT_MSG"
 fi

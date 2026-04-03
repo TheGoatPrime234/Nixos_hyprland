@@ -13,6 +13,9 @@ let
     installPhase = ''
       mkdir -p $out/share/sddm/themes/pixie
       cp -r ./* $out/share/sddm/themes/pixie/
+      
+      # NEU: Der magische Fix! Wir sagen SDDM explizit, dass es ein Qt6-Theme ist.
+      echo "QtVersion=6" >> $out/share/sddm/themes/pixie/metadata.desktop
     '';
   };
 in
