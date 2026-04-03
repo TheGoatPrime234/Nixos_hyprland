@@ -59,5 +59,8 @@
     flatpak = {
       enable = true;
     };  
+    hypridle = {
+      enable = true;
+    };
   };  
 }
