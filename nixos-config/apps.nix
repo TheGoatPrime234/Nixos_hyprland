@@ -33,6 +33,8 @@
     hyprlock
     wlogout
     waybar
+    pulsemixer
+    spicetify-cli
     grim
     slurp
     wl-clipboard
@@ -42,6 +44,5 @@
     rofi
     cava
     playerctl
-    librsvg
   ];
 }
