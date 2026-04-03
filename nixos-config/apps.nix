@@ -13,6 +13,9 @@
     efibootmgr
     gparted
 
+    ## Libs
+    libnotify
+
     ## Files
     yazi
     zip
