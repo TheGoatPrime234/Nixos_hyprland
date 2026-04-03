@@ -3,12 +3,14 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
+    spicetify-nix.url = "github:Gerg-L/spicetify-nix";
   };
 
-  outputs = { self, nixpkgs }@inputs: {
+  outputs = { self, nixpkgs, ... }@inputs: {
     nixosConfigurations = {
       nixos = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
+	specialArgs = {inherit inputs; };
         modules = [
 	# Wichtig
           ./hardware-configuration.nix
@@ -23,6 +25,9 @@
 
 	# Add-Ons  
 	  ./pixiesddm.nix
+	  ./spicetify.nix
+
+	  inputs.spicetify-nix.nixosModules.default
         ];
       };
     };

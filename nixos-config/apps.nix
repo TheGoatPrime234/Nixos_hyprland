@@ -23,7 +23,7 @@
     syncthing
 
     # Daily Use
-    spotify
+    ## spotify --> spicetify
     discord
     obsidian
     steam
@@ -31,13 +31,13 @@
 
     # Hyprland Setup
     ## sddm --> pixiesddm
+    ## spicetify-cli --> spicetify 
     hyprland
     hyprpaper
     hyprlock
     wlogout
     waybar
     pulsemixer
-    spicetify-cli
     grim
     slurp
     wl-clipboard
