@@ -2,7 +2,6 @@
 
 let
 
-  my-wallpaper = ./my-bg.jpg;
   pixie-sddm-theme = pkgs.stdenv.mkDerivation {
     pname = "pixie-sddm";
     version = "1.0";
@@ -16,9 +15,6 @@ let
       mkdir -p $out/share/sddm/themes/pixie
       cp -r ./* $out/share/sddm/themes/pixie/
       echo "QtVersion=6" >> $out/share/sddm/themes/pixie/metadata.desktop
-      cp ${my-wallpaper} $out/share/sddm/themes/pixie/my-bg.jpg
-      
-      sed -i 's/^[bB]ackground=.*/Background=my-bg.jpg/' $out/share/sddm/themes/pixie/theme.conf
     '';
   };
 in
