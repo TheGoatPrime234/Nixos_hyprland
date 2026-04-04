@@ -21,3 +21,5 @@ else
 	echo "Rebuild erfolgreich und erfolgreich committet: $COMMIT_MSG"
 	notify-send "Rebuild erfolgreich: $COMMIT_MSG"
 fi
+
+cd ~
