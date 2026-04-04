@@ -21,7 +21,6 @@
     zip
     unzip
     syncthing
-    rquickshare
 
     # Daily Use
     ## spotify --> spicetify
