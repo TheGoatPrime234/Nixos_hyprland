@@ -1,5 +1,5 @@
 {
-  description = "1. Flake";
+  description = "Meine NixOs Systeme";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
@@ -10,13 +10,22 @@
     nixosConfigurations = {
       nixos = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-	specialArgs = {inherit inputs; };
+	specialArgs = { inherit inputs; };
+	modules = [
+	  ./hardware-configuration-nixos.nix
+	  ./configuration.nix
+	];
+      };	
+      desktop = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+	specialArgs = { inherit inputs; };
         modules = [
 	# Wichtig
-          ./hardware-configuration.nix
+          ./hardware-configuration-desktop.nix
 
 	# Abspaltung  
           ./configuration.nix
+	  ./nvidia.nix
 	  ./fonts.nix
 	  ./apps.nix
 	  ./programs.nix
@@ -30,6 +39,29 @@
 	  inputs.spicetify-nix.nixosModules.default
         ];
       };
+      chromebook = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+	specialArgs = { inherit inputs; };
+	modules = [
+	# Wichtig
+	  ./hardware-configuration-chromebook.nix
+
+	# Absplatung
+	  ./configuration.nix
+	  
+	  ./fonts.nix
+	  ./apps.nix
+	  ./programs.nix
+	  ./services.nix
+	  ./hardware.nix
+
+	# Add-Ons
+	  ./pixiesddm.nix
+	  ./spicetify.nix
+
+	  inputs.spicetify-nix.nixosModules.default
+	];
+      };	
     };
   };
 }

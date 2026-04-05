@@ -127,6 +127,7 @@ alias appconf='nvim ~/nixos-config/apps.nix'
 
 alias f='fastfetch'
 alias carrun='cargo run'
+alias za='yazi'
 
 # Nix
 alias nxre='cd ~/nixos-config&&./rebuild.sh'

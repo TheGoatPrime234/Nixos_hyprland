@@ -1,6 +1,8 @@
 { config, pkgs, ... }:
 
 {
+  networking.hostName = "desktop"; # Sofort Ändern
+
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
@@ -16,10 +18,7 @@
 
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_6_12;
-  boot.kernelParams = [ "nvidia-drm.modeset=1" ];
 
-  networking.hostName = "nixos"; # Define your hostname.
-  services.tailscale.enable = true;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   security.pam.services.sddm.enableKwallet = true;
@@ -47,10 +46,7 @@
 
 
   environment.sessionVariables = {
-    LIBVA_DRIVE_NAME = "nvidia";
     XDG_SESSION_TYPE = "wayland";
-    GDM_BACKEND = "nvidia-drm";
-    __GLX_VENDOR_LIBRARY_NAME = "nvidia";
     WLR_NO_HARDWARE_CURSORS = "1";
     NIXOS_OZONE_WL = "1";
     PASSWORD_STORE = "basic";
@@ -81,7 +77,6 @@
   #   enableSSHSupport = true;
   # };
 
-  # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;

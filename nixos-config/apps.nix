@@ -3,24 +3,25 @@
 {
   environment.systemPackages = with pkgs; [
     # System & Tools
-    neovim
-    wget
-    fastfetch
-    git
-    tailscale
-    pciutils
-    pavucontrol
-    efibootmgr
-    gparted
+    neovim # Editor
+    wget # 
+    fastfetch # Fastfetch halt
+    git # Versionierung
+    tailscale # VPN 
+    pavucontrol # Ton in und outputs
+    efibootmgr # Änderungen der EFIs
+    gparted # Partionen
+    btop
 
     ## Libs
-    libnotify
+    libnotify # Benachrichtigungen
+    pciutils # Lib für PCI
 
     ## Files
-    yazi
-    zip
-    unzip
-    syncthing
+    yazi # TUI Fileexplorer 
+    zip   # Zipen
+    unzip # Zipen
+    syncthing # Dateisynchronisierung
 
     # Daily Use
     ## spotify --> spicetify
@@ -28,24 +29,25 @@
     obsidian
     steam
     vscode
+    ani-cli
 
     # Hyprland Setup
     ## sddm --> pixiesddm
     ## spicetify-cli --> spicetify 
-    hyprland
-    hyprpaper
-    hyprlock
-    wlogout
-    waybar
-    pulsemixer
-    grim
-    slurp
-    wl-clipboard
-    swaynotificationcenter
-    kitty
-    zsh
-    rofi
-    cava
-    playerctl
+    hyprland               # Tiling Manager
+    hyprpaper              # Hintergrund Bild
+    hyprlock               # Lockmanager
+    wlogout                # Herunterfahrmenu 
+    waybar                 # Taskleiste
+    pulsemixer             # Lautstärkekontrolle (Win + G Alternative)
+    grim                   # 
+    slurp                  #
+    wl-clipboard           #
+    swaynotificationcenter # Benachrichtigunge 
+    kitty                  # Terminal
+    zsh                    # Terminal engine
+    rofi                   # Appmenu
+    cava                   # Musikvisualisierung 
+    playerctl              # Musikplayer integrationen
   ];
 }

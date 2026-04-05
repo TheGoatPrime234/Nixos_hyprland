@@ -11,13 +11,13 @@
       pkgs = nixpkgs.legacyPackages.${system};
     in
     { 
-      packages."x86_64-linux".default = pkgs.rustPlatform.buildRustPackage {
-        name = "themeswitcher";
-	src = ./.;
-	buildInputs = [pkgs.glib ];
-	nativeBuildInputs = [pkgs.pkg-config ];
-
-      };	
+ #     packages."x86_64-linux".default = pkgs.rustPlatform.buildRustPackage {
+  #      name = "themeswitcher";
+#	src = ./.;
+#	buildInputs = [pkgs.glib ];
+#	nativeBuildInputs = [pkgs.pkg-config ];
+#	cargoHash = pkgs.lib.fakeHash;
+#      };	
       devShells.${system}.default = pkgs.mkShell {
         
         buildInputs = with pkgs; [
@@ -33,6 +33,13 @@
 	  wayland
 	  libxkbcommon
 	  libGL
+	  gtk4
+	  pango
+	  gdk-pixbuf
+	  gdk
+	  glib
+	  atk
+	  cairo
         ];
 
         shellHook = ''
@@ -40,5 +47,5 @@
           echo "🦀 Hello Rust 🦀"
         '';
       };
-    };
+  };
 }
