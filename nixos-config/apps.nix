@@ -12,6 +12,7 @@
     efibootmgr # Änderungen der EFIs
     gparted # Partionen
     btop
+    sl # WICHTIG !!!
 
     ## Libs
     libnotify # Benachrichtigungen

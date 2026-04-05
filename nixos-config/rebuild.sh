@@ -3,8 +3,8 @@
 set -e
 cd ~/nixos-config
 
-HOST=$(hostname)
-#HOST="desktop"
+#HOST=$(hostname)
+HOST="desktop"
 
 cp /etc/nixos/hardware-configuration.nix "hardware-configuration-${HOST}.nix"
 
