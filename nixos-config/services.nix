@@ -14,6 +14,7 @@
       sddm = {
         enable = true;
 	theme = "pixie";
+	autoNumlock = true;
 	wayland = {
 	  enable = true;
 	};  

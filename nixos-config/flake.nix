@@ -14,6 +14,10 @@
 	modules = [
 	  ./hardware-configuration-nixos.nix
 	  ./configuration.nix
+	  ./apps.nix
+	  ./programs.nix
+	  ./services.nix
+	  ./hardware.nix
 	];
       };	
       desktop = nixpkgs.lib.nixosSystem {
