@@ -34,7 +34,13 @@ ZSH_THEME="robbyrussell"
 # zstyle ':omz:update' mode disabled  # disable automatic updates
 # zstyle ':omz:update' mode auto      # update automatically without asking
 # zstyle ':omz:update' mode reminder  # just remind me to update when it's time
-
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	command yazi "$@" --cwd-file="$tmp"
+	IFS= read -r -d '' cwd < "$tmp"
+	[ "$cwd" != "$PWD" ] && [ -d "$cwd" ] && builtin cd -- "$cwd"
+	rm -f -- "$tmp"
+}
 # Uncomment the following line to change how often to auto-update (in days).
 # zstyle ':omz:update' frequency 13
 
@@ -128,6 +134,7 @@ alias appconf='nvim ~/nixos-config/apps.nix'
 alias f='fastfetch'
 alias carrun='cargo run'
 alias za='yazi'
+alias v='nvim'
 
 # Nix
 alias nxre='cd ~/nixos-config&&./rebuild.sh'

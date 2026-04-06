@@ -5,3 +5,4 @@ swaync-client -R
 swaync-client -rs
 pkill -9 hyprpaper
 hyprpaper & disown
+hyprctl reload

@@ -11,18 +11,13 @@
       pkgs = nixpkgs.legacyPackages.${system};
     in
     { 
- #     packages."x86_64-linux".default = pkgs.rustPlatform.buildRustPackage {
-  #      name = "themeswitcher";
-#	src = ./.;
-#	buildInputs = [pkgs.glib ];
-#	nativeBuildInputs = [pkgs.pkg-config ];
-#	cargoHash = pkgs.lib.fakeHash;
-#      };	
       devShells.${system}.default = pkgs.mkShell {
-        
+        nativeBuildInputs = with pkgs; [
+	  pkg-config
+	  cargo
+	  rustc
+	];
         buildInputs = with pkgs; [
-          cargo         # Rust Paketmanager
-          rustc         # Rust Compiler
           rustfmt       # Formatiert den Code 
           clippy        # Sucht nach Fehlern 
           rust-analyzer # VS Code / Neovim Integration
@@ -33,13 +28,14 @@
 	  wayland
 	  libxkbcommon
 	  libGL
+	  gtk3
 	  gtk4
 	  pango
 	  gdk-pixbuf
-	  gdk
 	  glib
 	  atk
 	  cairo
+	  graphene
         ];
 
         shellHook = ''
