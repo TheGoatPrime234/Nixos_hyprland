@@ -10,7 +10,7 @@ cp /etc/nixos/hardware-configuration.nix "hardware-configuration-${HOST}.nix"
 
 git add . 
 echo "Starte Rebuild für Host: ${HOST}..."
-sudo nixos-rebuild switch --flake .#${HOST} --quiet
+sudo nixos-rebuild switch --flake .#${HOST} -v
 
 if [ -z "$1" ]; then
 	COMMIT_MSG="Auto-Rebuild: (${HOST}) $(date +'%Y-%m-%d %H:%M:%S')"
@@ -18,7 +18,7 @@ else
 	COMMIT_MSG="$1"
 fi
 
-if git diff --cached --quiet; then
+if git diff --cached -v; then
 	cd ~
 	echo "Rebuild erfolgreich, aber keine neuen Änderungen zum Commiten"
 	notify-send "Rebuild erfolgreich (${HOST}), aber kein Commit"

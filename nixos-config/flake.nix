@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
+    nixpkgs-25-11.url = "github:nixos/nixpkgs/nixos-25.11";
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
   };
 
@@ -14,7 +15,8 @@
 	modules = [
 	  ./hardware-configuration-nixos.nix
 	  ./configuration.nix
-	  ./apps.nix
+	  ./apps_main.nix
+	  ./apps_new.nix
 	  ./programs.nix
 	  ./services.nix
 	  ./hardware.nix
@@ -31,7 +33,8 @@
           ./configuration.nix
 	  ./nvidia.nix
 	  ./fonts.nix
-	  ./apps.nix
+	  ./apps_main.nix
+	  ./apps_new.nix
 	  ./programs.nix
 	  ./services.nix
 	  ./hardware.nix
@@ -54,7 +57,8 @@
 	  ./configuration.nix
 	  
 	  ./fonts.nix
-	  ./apps.nix
+	  ./apps_main.nix
+	  ./apps_new.nix
 	  ./programs.nix
 	  ./services.nix
 	  ./hardware.nix
