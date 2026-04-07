@@ -8,68 +8,29 @@
   };
 
   outputs = { self, nixpkgs, ... }@inputs: {
-    nixosConfigurations = {
-      nixos = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-	specialArgs = { inherit inputs; };
-	modules = [
-	  ./hardware-configuration-nixos.nix
-	  ./configuration.nix
-	  ./apps_main.nix
-	  ./apps_new.nix
-	  ./programs.nix
-	  ./services.nix
-	  ./hardware.nix
-	];
-      };	
-      desktop = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-	specialArgs = { inherit inputs; };
-        modules = [
+    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      specialArgs = { inherit inputs; };
+      modules = [
 	# Wichtig
-          ./hardware-configuration-desktop.nix
+        ./hardware-configuration.nix
 
 	# Abspaltung  
-          ./configuration.nix
-	  ./nvidia.nix
-	  ./fonts.nix
-	  ./apps_main.nix
-	  ./apps_new.nix
-	  ./programs.nix
-	  ./services.nix
-	  ./hardware.nix
+        ./configuration.nix
+	./nvidia.nix
+	./fonts.nix
+	./apps_main.nix
+	./apps_new.nix
+	./programs.nix
+	./services.nix
+	./hardware.nix
 
 	# Add-Ons  
-	  ./pixiesddm.nix
-	  ./spicetify.nix
+	./pixiesddm.nix
+        ./spicetify.nix
 
-	  inputs.spicetify-nix.nixosModules.default
-        ];
-      };
-      chromebook = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-	specialArgs = { inherit inputs; };
-	modules = [
-	# Wichtig
-	  ./hardware-configuration-chromebook.nix
-
-	# Absplatung
-	  ./configuration.nix
-	  
-	  ./fonts.nix
-	  ./apps_main.nix
-	  ./apps_new.nix
-	  ./programs.nix
-	  ./services.nix
-	  ./hardware.nix
-
-	# Add-Ons
-	  ./pixiesddm.nix
-	  ./spicetify.nix
-
-	  inputs.spicetify-nix.nixosModules.default
-	];
-      };	
+        inputs.spicetify-nix.nixosModules.default
+      ];
     };
   };
 }

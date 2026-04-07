@@ -1,6 +1,9 @@
 <configuration version="37">
-    <folder id="default" label="Default Folder" path="/home/cato/Sync" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" fsWatcherTimeoutS="0" ignorePerms="false" autoNormalize="true">
+    <folder id="ngxgj-f2ouz" label="Vaults" path="~/Documents/Vaults" type="sendreceive" rescanIntervalS="3600" fsWatcherEnabled="true" fsWatcherDelayS="10" fsWatcherTimeoutS="0" ignorePerms="false" autoNormalize="true">
         <filesystemType>basic</filesystemType>
+        <device id="KTMXZ37-UVIDCOC-SSPXJDV-HSL2KE7-DYGTDRQ-RWUUNSH-PMBACVF-UUJOSAE" introducedBy="">
+            <encryptionPassword></encryptionPassword>
+        </device>
         <device id="U6WAEJX-YTJLVVL-GDOM62T-ES7I4FJ-C7IKTYG-ZEY2FS3-2SVKE4Y-FZEY4QX" introducedBy="">
             <encryptionPassword></encryptionPassword>
         </device>
@@ -13,7 +16,7 @@
         <copiers>0</copiers>
         <pullerMaxPendingKiB>0</pullerMaxPendingKiB>
         <hashers>0</hashers>
-        <order>random</order>
+        <order>oldestFirst</order>
         <ignoreDelete>false</ignoreDelete>
         <scanProgressIntervalS>0</scanProgressIntervalS>
         <pullerPauseS>0</pullerPauseS>
@@ -40,6 +43,17 @@
             <maxTotalSize>4096</maxTotalSize>
         </xattrFilter>
     </folder>
+    <device id="KTMXZ37-UVIDCOC-SSPXJDV-HSL2KE7-DYGTDRQ-RWUUNSH-PMBACVF-UUJOSAE" name="SM-S936B" compression="metadata" introducer="false" skipIntroductionRemovals="false" introducedBy="">
+        <address>dynamic</address>
+        <paused>false</paused>
+        <autoAcceptFolders>false</autoAcceptFolders>
+        <maxSendKbps>0</maxSendKbps>
+        <maxRecvKbps>0</maxRecvKbps>
+        <maxRequestKiB>0</maxRequestKiB>
+        <untrusted>false</untrusted>
+        <remoteGUIPort>0</remoteGUIPort>
+        <numConnections>0</numConnections>
+    </device>
     <device id="U6WAEJX-YTJLVVL-GDOM62T-ES7I4FJ-C7IKTYG-ZEY2FS3-2SVKE4Y-FZEY4QX" name="nixos" compression="metadata" introducer="false" skipIntroductionRemovals="false" introducedBy="">
         <address>dynamic</address>
         <paused>false</paused>
@@ -90,7 +104,6 @@
         <releasesURL>https://upgrades.syncthing.net/meta.json</releasesURL>
         <overwriteRemoteDeviceNamesOnConnect>false</overwriteRemoteDeviceNamesOnConnect>
         <tempIndexMinBlocks>10</tempIndexMinBlocks>
-        <unackedNotificationID>authenticationUserAndPassword</unackedNotificationID>
         <trafficClass>0</trafficClass>
         <setLowPriority>true</setLowPriority>
         <maxFolderConcurrency>0</maxFolderConcurrency>

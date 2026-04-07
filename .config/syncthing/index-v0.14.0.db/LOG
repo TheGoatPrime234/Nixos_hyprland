@@ -107,3 +107,67 @@
 23:50:24.891802 version@stat F·[3 1] S·1KiB[573B 502B] Sc·[0.75 0.00]
 23:50:24.948477 db@janitor F·6 G·0
 23:50:24.948487 db@open done T·65.896529ms
+=============== Apr 6, 2026 (CEST) ===============
+21:34:07.088783 table@compaction L0·3 -> L1·1 S·1KiB Q·143
+21:34:07.091087 table@build created L1@27 N·13 S·502B "\x04de..can,v86":"\npr..ion,v50"
+21:34:07.091134 version@stat F·[0 1] S·502B[0B 502B] Sc·[0.00 0.00]
+21:34:07.094382 table@compaction committed F-3 S-573B Ke·0 D·12 T·5.53598ms
+21:34:07.094881 table@remove removed @21
+21:34:07.095011 table@remove removed @18
+21:34:07.095053 table@remove removed @17
+21:34:14.210950 memdb@flush N·83016 S·15MiB
+21:34:14.287764 memdb@flush created L0@29 N·83016 S·3MiB "\x00\x00\x00..ian,v4427":"\x11T\xd9..\x94K\xa4,v120"
+21:34:14.287791 version@stat F·[1 1] S·3MiB[3MiB 502B] Sc·[0.25 0.00]
+21:34:14.289520 memdb@flush committed F·1 T·78.524117ms
+21:34:14.292762 journal@remove removed @25
+21:34:19.598299 table@compaction L0·1 -> L1·1 S·3MiB Q·116267
+21:34:19.678213 table@build created L1@30 N·40419 S·2MiB "\x00\x00\x00..ian,v4427":"\x01\x00\x00...py,v66349"
+21:34:19.699144 table@build created L1@31 N·38779 S·1MiB "\x01\x00\x00..ifi,v66840":"\x0e\x00\x00..png,v32974"
+21:34:19.699176 version@stat F·[0 2] S·3MiB[0B 3MiB] Sc·[0.00 0.04]
+21:34:19.702012 table@compaction committed F~ S-101KiB Ke·0 D·3831 T·103.683605ms
+21:34:19.727672 table@remove removed @29
+21:34:19.727741 table@remove removed @27
+=============== Apr 7, 2026 (CEST) ===============
+15:42:07.721410 db@close closing
+15:42:07.721964 db@close done T·569.931µs
+=============== Apr 7, 2026 (CEST) ===============
+22:06:40.908476 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+22:06:40.914070 version@stat F·[0 2] S·3MiB[0B 3MiB] Sc·[0.00 0.04]
+22:06:40.914106 db@open opening
+22:06:40.914171 journal@recovery F·1
+22:06:40.914388 journal@recovery recovering @28
+22:06:41.044546 memdb@flush created L0@32 N·84068 S·3MiB "\x00\x00\x00..son,v166276":"\x0e\x00\x00..png,d134642"
+22:06:41.111502 version@stat F·[1 2] S·7MiB[3MiB 3MiB] Sc·[0.25 0.04]
+22:06:41.122056 db@janitor F·6 G·1
+22:06:41.122061 db@janitor removing table-24
+22:06:41.122081 db@open done T·207.970509ms
+22:06:41.777200 table@compaction L0·1 -> L1·2 S·7MiB Q·167172
+22:06:41.942658 table@build created L1@35 N·31254 S·2MiB "\x00\x00\x00..ian,v4427":"\x00\x00\x00..e__,v47943"
+22:06:42.084694 table@build created L1@36 N·62490 S·2MiB "\x00\x00\x00..pyc,v46256":"\x01\x00\x00..e__,v54051"
+22:06:42.105252 table@build created L1@37 N·22692 S·1MiB "\x01\x00\x00...py,v49379":"\x0e\x00\x00...md,v146997"
+22:06:42.105276 version@stat F·[0 3] S·5MiB[0B 5MiB] Sc·[0.00 0.06]
+22:06:42.107021 table@compaction committed F~ S-1MiB Ke·0 D·46830 T·329.791592ms
+22:06:42.114193 table@remove removed @30
+22:06:42.114268 table@remove removed @31
+22:12:37.202003 db@close closing
+22:12:37.202460 db@close done T·454.362µs
+=============== Apr 7, 2026 (CEST) ===============
+22:14:32.942480 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+22:14:32.962007 version@stat F·[0 3] S·5MiB[0B 5MiB] Sc·[0.00 0.06]
+22:14:32.962020 db@open opening
+22:14:32.962073 journal@recovery F·1
+22:14:32.962365 journal@recovery recovering @33
+22:14:32.973134 memdb@flush created L0@38 N·534 S·24KiB "\x00\x00\x00..son,v167554":"\x0e\x00\x00..son,v167690"
+22:14:32.973209 version@stat F·[1 3] S·5MiB[24KiB 5MiB] Sc·[0.25 0.06]
+22:14:33.007472 db@janitor F·7 G·1
+22:14:33.007502 db@janitor removing table-32
+22:14:33.007546 db@open done T·45.523239ms
+22:14:33.489800 table@compaction L0·1 -> L1·3 S·5MiB Q·167707
+22:14:33.521333 table@build created L1@41 N·31229 S·2MiB "\x00\x00\x00..ian,v4427":"\x00\x00\x00..pyc,v47359"
+22:14:33.652787 table@build created L1@42 N·62390 S·2MiB "\x00\x00\x00..pyc,v47052":"\x01\x00\x00..e__,v56044"
+22:14:33.778699 table@build created L1@43 N·22556 S·1MiB "\x01\x00\x00..pyc,v49610":"\x0e\x00\x00...md,v146997"
+22:14:33.778736 version@stat F·[0 3] S·5MiB[0B 5MiB] Sc·[0.00 0.06]
+22:14:33.780408 table@compaction committed F-1 S-372KiB Ke·0 D·795 T·290.574394ms
+22:14:33.937607 table@remove removed @35
+22:14:33.937859 table@remove removed @36
+22:14:33.938112 table@remove removed @37
