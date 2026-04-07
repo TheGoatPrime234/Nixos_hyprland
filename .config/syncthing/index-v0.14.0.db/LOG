@@ -184,3 +184,15 @@
 22:54:55.933047 db@janitor F·7 G·1
 22:54:55.933060 db@janitor removing table-38
 22:54:55.933093 db@open done T·56.615323ms
+23:14:46.856837 db@close closing
+23:14:46.857529 db@close done T·690.033µs
+=============== Apr 7, 2026 (CEST) ===============
+23:15:11.842664 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+23:15:11.844016 version@stat F·[1 3] S·5MiB[285B 5MiB] Sc·[0.25 0.06]
+23:15:11.844025 db@open opening
+23:15:11.844061 journal@recovery F·1
+23:15:11.844208 journal@recovery recovering @45
+23:15:11.865934 memdb@flush created L0@47 N·4 S·284B "\x03KT..ion,v167715":"\x04ng..can,v167713"
+23:15:11.866022 version@stat F·[2 3] S·5MiB[569B 5MiB] Sc·[0.50 0.06]
+23:15:11.907273 db@janitor F·7 G·0
+23:15:11.907300 db@open done T·63.27114ms

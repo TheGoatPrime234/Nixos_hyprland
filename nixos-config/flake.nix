@@ -5,6 +5,7 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
     nixpkgs-25-11.url = "github:nixos/nixpkgs/nixos-25.11";
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
+    zen-browser.url = "github:0xc000022070/zen-browser-flake";
   };
 
   outputs = { self, nixpkgs, ... }@inputs: {
@@ -20,7 +21,7 @@
 	./nvidia.nix
 	./fonts.nix
 	./apps_main.nix
-	./apps_new.nix
+	./unstable-packages.nix
 	./programs.nix
 	./services.nix
 	./hardware.nix
@@ -28,6 +29,7 @@
 	# Add-Ons  
 	./pixiesddm.nix
         ./spicetify.nix
+	./zen-browser.nix
 
         inputs.spicetify-nix.nixosModules.default
       ];

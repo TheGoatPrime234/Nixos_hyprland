@@ -8,11 +8,7 @@
 
   # Bootloader.
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.grub = {
-    enable = true;
-    efiSupport = true;
-    device = "nodev";
-  };
+  boot.loader.systemd-boot.enable = true;
 
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_6_12;
