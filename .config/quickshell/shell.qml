@@ -7,66 +7,162 @@ import QtQuick.Layouts
 
 PanelWindow {
 	id: root
+	anchors {
+		top: true
+		left: true
+		right: true
+	}
+	color: "#ff0000"
+	height: 50
 
-	property color colBg: "#1a1b26"
-	property color colCyab: "0db9d7"
-	property color colCyab: "7aa2f7"
-	property color colCyab: "e0af68"
-	property string fontFamily: "GeistMono Nerd Font Propo"
-
-	property int cpuUsage: 0
-	property var lastCpuIdle: 0
-	property car lstCpuTotal: 0
-	
-	anchors.top: true
-	anchors.left: true
-	anchors.right: true
-	implicitHeight: 30
-	color: "#1a1b26"
-
-	RowLayout {
+	Item {
 		anchors.fill: parent
-		anchors.margins: 8
+		RowLayout {
+			anchors.left: parent.left
+			anchors.verticalCenter: parent.verticalCenter
+			spacing: 12
+			anchors.margins: 8
 
-		Repeater {
-			model: 9
-			Text {
-				property var ws: Hyprland.workspaces.values.find(w => w.id == index +1)
-				property bool isActive: Hyprland.focusedWorkspace?.id == (index +1)
-				color: isActive ? "#0db9d7" : (ws ? "#7aa2f7" : "#444b6a")
-				font { pixelSize: 14; bold: true }
-				text: index + 1 
+			Rectangle {
+				color: "#00ff00"
+				Layout.preferredWidth: innerLayout.implicitWidth + 24
+				anchors.left: parent.left
+				radius: 10
+//				color: "#282a36" // Bg0
+				border.width: 1
+				border.color : "#44475a" //Bg2
 
-				MouseArea {
+				RowLayout {
 					anchors.fill: parent
-					onClicked: Hyprland.dispatch("workspace " + (index + 1))
-				}
-			}
-		}
-		Item {
-			Layout.fillWidth: true 
-		}
-	}
-	RowLayout {
-		anchors.fill:parent
-		anrchors.margin: 8
+					Repeater {
+						model: 9
+						Text {
+							property var ws: Hyprland.workspaces.values.find(w => w.id == index +1)
+							property bool isActive: Hyprland.focusedWorkspace?.id == (index +1)
+							color: isActive ? "#0db9d7" : (ws ? "#7aa2f7" : "#444b6a")
+							font { pixelSize: 14; bold: true }
+							text: index + 1 
 
-		Process {
-			id: cpuProc
-			command: ["sh", "-c", "head -1 /proc/stat"]
-			stdout: SplitParser {
-				onRead: data => {
-					var p = data.trim().split(/\s+/\)
-					var idle = parseInt(p[4]) + parseInt(p[5])
-					var total = p.slice(1, 8).reduce((a, b) => a + parseInt(b), 0)
-					if (lastCpuTotal > 0) {
-						cpuUsage = Math.round(100 * (1 - (idle - lastCpuIdle) / (total - lastCpuTotal)))
+							MouseArea {
+								anchors.fill: parent
+								onClicked: Hyprland.dispatch("workspace " + (index + 1))
+							}
+						}
 					}
-					lastCpuTotal = total
-					lastCpuIdle = idle
+				}
+			}
+
+			Item {
+				Layout.fillWidth: true
+			}
+
+			Rectangle {
+
+				Layout.preferredWidth: innerLayout.implicitWidth + 24
+				
+				anchors.right: parent.right
+				radius: 10
+				color: "#282a36" // Bg0
+				border.width: 1
+				border.color : "#44475a" //Bg2
+				
+				Text {
+					text: "Cava"
+					font {
+						pixelSize: 14
+						bold: true
+					}
+					color: "#bd93f9" // Ac1
+				}
+			}
+		}
+
+		RowLayout {
+			anchors.centerIn: parent
+
+			Rectangle {
+				Layout.preferredWidth: innerLayout.implicitWidth + 24
+				radius: 10
+				anchors.left: parent.left
+				color: "#282a36" // Bg0
+				border.width: 1
+				border.color : "#44475a" //Bg2
+				
+				Text {
+					text: "Uhr 1"
+					font {
+						pixelSize: 14
+						bold: true
+					}
+					color: "#bd93f9" // Ac1
+				}
+			}
+
+			Rectangle {
+				Layout.preferredWidth: innerLayout.implicitWidth + 24
+				radius: 10
+				anchors.right: parent.right
+				color: "#282a36" // Bg0
+				border.width: 1
+				border.color : "#44475a" //Bg2
+				
+				Text {
+					text: "Uhr 2"
+					font {
+						pixelSize: 14
+						bold: true
+					}
+					color: "#bd93f9" // Ac1
+				}
+			}
+		}
+
+		RowLayout {
+			anchors.right: parent.right
+			anchors.verticalCenter: parent.verticalCenter
+			spacing: 12
+
+			Rectangle {
+				Layout.preferredWidth: innerLayout.implicitWidth + 24
+				radius: 10
+				color: "#282a36" // Bg0
+				border.width: 1
+				border.color : "#44475a" //Bg2
+				Repeater {
+					model: 9
+					Text {
+						property var ws: Hyprland.workspaces.values.find(w => w.id == index +1)
+						property bool isActive: Hyprland.focusedWorkspace?.id == (index +1)
+						color: isActive ? "#0db9d7" : (ws ? "#7aa2f7" : "#444b6a")
+						font { pixelSize: 14; bold: true }
+						text: index + 1 
+
+						MouseArea {
+							anchors.fill: parent
+							onClicked: Hyprland.dispatch("workspace " + (index + 1))
+						}
+					}
+				}
+			}
+
+			Rectangle {
+				Layout.preferredWidth: innerLayout.implicitWidth + 24
+				radius: 10
+				color: "#282a36" // Bg0
+				border.width: 1
+				border.color : "#44475a" //Bg2
+				
+				Text {
+					text: "Cava"
+					font {
+						pixelSize: 14
+						bold: true
+					}
+					color: "#bd93f9" // Ac1
 				}
 			}
 		}
 	}
-	Component.onCompleted: running = true
 }
+
+
