@@ -1,168 +1,209 @@
 import Quickshell
 import Quickshell.Io
-import Quickshell.Wayland
-import Quickshell.Hyprland
 import QtQuick
 import QtQuick.Layouts
+import Quickshell
+import Quickshell.Wayland
+import Quickshell.Hyprland
 
 PanelWindow {
-	id: root
+	property color trans: "transparent"
+	property color bg0: "#282a36"
+	property color bg1: "#343746"
+	property color bg2: "#44475a"
+	property color bg3: "#6272a4"
+
+	property color ac1: "#bd93f9"
+	property color ac2: "#8be9fd"
+	property color ac3: "#ff79c6"
+
+	property real rad: 8
+	property real spc1: 16
+	property real spc2: 8
+	property real outmrg: 4
+	property real impW: 8
+	property real impH: 4
+
+	id: topBar
 	anchors {
-		top: true
 		left: true
 		right: true
+		top: true
 	}
-	color: "#ff0000"
-	height: 50
+	implicitHeight: 40
+	color: trans
 
-	Item {
+	RowLayout {
 		anchors.fill: parent
-		RowLayout {
-			anchors.left: parent.left
-			anchors.verticalCenter: parent.verticalCenter
-			spacing: 12
-			anchors.margins: 8
+		anchors.margins: outmrg
+		anchors.verticalCenter: parent.verticalCenter
 
-			Rectangle {
-				color: "#00ff00"
-				Layout.preferredWidth: innerLayout.implicitWidth + 24
-				anchors.left: parent.left
-				radius: 10
-//				color: "#282a36" // Bg0
-				border.width: 1
-				border.color : "#44475a" //Bg2
+		Rectangle {
+			color: bg0
+			radius: rad
+			implicitWidth: rpill.implicitWidth + impW
+			implicitHeight: rpill.implicitHeight + impH
+			Row {
+				id: rpill
+				spacing: spc1
+				anchors.fill: parent
+				anchors.margins: outmrg
+				anchors.verticalCenter: parent.verticalCenter
+				Rectangle {
+					color: bg1
+					radius: rad
+					implicitWidth: rpillchild1.implicitWidth + impW
+					implicitHeight: rpillchild1.implicitHeight + impH 
 
-				RowLayout {
-					anchors.fill: parent
-					Repeater {
-						model: 9
-						Text {
-							property var ws: Hyprland.workspaces.values.find(w => w.id == index +1)
-							property bool isActive: Hyprland.focusedWorkspace?.id == (index +1)
-							color: isActive ? "#0db9d7" : (ws ? "#7aa2f7" : "#444b6a")
-							font { pixelSize: 14; bold: true }
-							text: index + 1 
+					Row {
+						id: rpillchild1
+						anchors.centerIn: parent
+						spacing: spc2
+						Repeater {
+							model: 9
 
-							MouseArea {
-								anchors.fill: parent
-								onClicked: Hyprland.dispatch("workspace " + (index + 1))
+							Text {
+								horizontalAlignment: Text.AlignHCenter
+								verticalAlignment: Text.AlignVCenter
+								property var ws: Hyprland.workspaces.values.find(w=> w.id == index +1)
+								property bool isActive: Hyprland.focusedWorkspace?.id == (index +1)
+								color: isActive ? ac2 : (ws ? ac3 : ac1)
+								font {
+									pixelSize: 14;
+									bold: true
+								}
+								text: index + 1
+								MouseArea {
+									anchors.fill: parent
+									onClicked: Hyprland.dispatch("workspace " + (index + 1))
+								}
 							}
 						}
 					}
 				}
-			}
-
-			Item {
-				Layout.fillWidth: true
-			}
-
-			Rectangle {
-
-				Layout.preferredWidth: innerLayout.implicitWidth + 24
-				
-				anchors.right: parent.right
-				radius: 10
-				color: "#282a36" // Bg0
-				border.width: 1
-				border.color : "#44475a" //Bg2
-				
-				Text {
-					text: "Cava"
-					font {
-						pixelSize: 14
-						bold: true
-					}
-					color: "#bd93f9" // Ac1
-				}
-			}
-		}
-
-		RowLayout {
-			anchors.centerIn: parent
-
-			Rectangle {
-				Layout.preferredWidth: innerLayout.implicitWidth + 24
-				radius: 10
-				anchors.left: parent.left
-				color: "#282a36" // Bg0
-				border.width: 1
-				border.color : "#44475a" //Bg2
-				
-				Text {
-					text: "Uhr 1"
-					font {
-						pixelSize: 14
-						bold: true
-					}
-					color: "#bd93f9" // Ac1
-				}
-			}
-
-			Rectangle {
-				Layout.preferredWidth: innerLayout.implicitWidth + 24
-				radius: 10
-				anchors.right: parent.right
-				color: "#282a36" // Bg0
-				border.width: 1
-				border.color : "#44475a" //Bg2
-				
-				Text {
-					text: "Uhr 2"
-					font {
-						pixelSize: 14
-						bold: true
-					}
-					color: "#bd93f9" // Ac1
-				}
-			}
-		}
-
-		RowLayout {
-			anchors.right: parent.right
-			anchors.verticalCenter: parent.verticalCenter
-			spacing: 12
-
-			Rectangle {
-				Layout.preferredWidth: innerLayout.implicitWidth + 24
-				radius: 10
-				color: "#282a36" // Bg0
-				border.width: 1
-				border.color : "#44475a" //Bg2
-				Repeater {
-					model: 9
+				Rectangle {
+					color: bg1 
+					radius: rad 
+					implicitWidth: rpillchild2.implicitWidth + impW
+					implicitHeight: rpillchild2.implicitHeight + impH
 					Text {
-						property var ws: Hyprland.workspaces.values.find(w => w.id == index +1)
-						property bool isActive: Hyprland.focusedWorkspace?.id == (index +1)
-						color: isActive ? "#0db9d7" : (ws ? "#7aa2f7" : "#444b6a")
-						font { pixelSize: 14; bold: true }
-						text: index + 1 
-
-						MouseArea {
-							anchors.fill: parent
-							onClicked: Hyprland.dispatch("workspace " + (index + 1))
+						horizontalAlignment: Text.AlignHCenter
+						verticalAlignment: Text.AlignVCenter
+						id: rpillchild2
+						text: "Cava"
+						font {
+							pixelSize: 14;
+							bold: true 
 						}
 					}
 				}
 			}
-
-			Rectangle {
-				Layout.preferredWidth: innerLayout.implicitWidth + 24
-				radius: 10
-				color: "#282a36" // Bg0
-				border.width: 1
-				border.color : "#44475a" //Bg2
-				
-				Text {
-					text: "Cava"
-					font {
-						pixelSize: 14
-						bold: true
+		}
+		Item {
+			Layout.fillWidth: true 
+		}
+		Rectangle {
+			color: bg0
+			radius: rad
+			implicitWidth: cpill.implicitWidth + impW
+			implicitHeight: cpill.implicitHeight + impH
+			Row {
+				id: cpill
+				anchors.centerIn: parent
+				spacing: spc2
+				Rectangle {
+					color: bg1
+					radius: rad
+					implicitWidth: cpillchild1.implicitWidth + impW
+					implicitHeight: cpillchild1.implicitHeight + impH
+					Text {
+						id: cpillchild1 
+						horizontalAlignment: Text.AlignHCenter
+						verticalAlignment: Text.AlignVCenter
+						text: "Uhr 1"
 					}
-					color: "#bd93f9" // Ac1
+				}
+				Text {
+					id: cpillchild2
+					horizontalAlignment: Text.AlignHCenter
+					verticalAlignment: Text.AlignVCenter
+					text: "Icon"
+				}
+				Rectangle {
+					color: bg1
+					radius: rad
+					implicitWidth: cpillchild3.implicitWidth + impW
+					implicitHeight: cpillchild3.implicitHeight + impH
+					Text {
+						id: cpillchild3
+						horizontalAlignment: Text.AlignHCenter
+						verticalAlignment: Text.AlignVCenter
+						text: "Uhr 2"
+					}
+				}
+			}
+		}
+		Item {
+			Layout.fillWidth: true 
+		}
+		Rectangle {
+			color: bg0
+			radius: rad
+			implicitWidth: lpill.implicitWidth + impW
+			implicitHeight: lpill.implicitHeight + impH
+			Row {
+				id: lpill
+				spacing: spc1
+				anchors.verticalCenter: parent.verticalCenter
+				Rectangle {
+					color: bg1
+					radius: rad
+					implicitWidth: lpillchild1.implicitWidth + impW
+					implicitHeight: lpillchild1.implicitHeight + impH
+					Text {
+						horizontalAlignment: Text.AlignHCenter
+						verticalAlignment: Text.AlignVCenter
+						id: lpillchild1
+						text: "Lautstärke"
+					}
+				}
+				Rectangle {
+					color: bg1
+					radius: rad
+					implicitWidth: lpillchild2.implicitWidth + impW
+					implicitHeight: lpillchild2.implicitHeight+ impH
+					Text {
+						horizontalAlignment: Text.AlignHCenter
+						verticalAlignment: Text.AlignVCenter
+						id: lpippchild2
+						text: "Wlan"
+					}
+				}
+				Rectangle {
+					color: bg1
+					radius: rad
+					implicitWidth: lpillchild3.implicitWidth + impW
+					implicitHeight: lpillchild3.implicitHeight+ impH
+					Text {
+						horizontalAlignment: Text.AlignHCenter
+						verticalAlignment: Text.AlignVCenter
+						id: lpippchild3
+						text: "Battery"
+					}
+				}
+				Rectangle {
+					color: bg1
+					radius: rad
+					implicitWidth: lpillchild4.implicitWidth + impW
+					implicitHeight: lpillchild4.implicitHeight+ impH
+					Text {
+						horizontalAlignment: Text.AlignHCenter
+						verticalAlignment: Text.AlignVCenter
+						id: lpippchild4
+						text: "Notify"
+					}
 				}
 			}
 		}
 	}
 }
-
-

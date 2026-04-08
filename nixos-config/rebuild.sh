@@ -10,8 +10,6 @@ git add cava/
 git add hypr/
 git add kitty/
 git add nvim/
-git add quickshell/
-git add quickshell/
 git add spicetify/
 git add swaync/
 git add syncthing/

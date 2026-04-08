@@ -258,3 +258,8 @@
 19:25:16.914100 db@janitor F·7 G·1
 19:25:16.914125 db@janitor removing table-57
 19:25:16.914182 db@open done T·58.172818ms
+21:58:58.761014 table@compaction L0·1 -> L1·1 S·1MiB Q·168616
+21:58:58.802888 table@build created L1@66 N·22617 S·1MiB "\x01\x00\x00..e__,v53698":"\x0e\x00\x00...md,v146997"
+21:58:58.803035 version@stat F·[0 3] S·5MiB[0B 5MiB] Sc·[0.00 0.06]
+21:58:58.805159 table@compaction committed F-1 S-286B Ke·0 D·4 T·44.055301ms
+21:58:58.806024 table@remove removed @62
