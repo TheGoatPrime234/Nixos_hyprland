@@ -20,6 +20,7 @@
 
     ## Files
     yazi # TUI Fileexplorer 
+    tree
     zip   # Zipen
     unzip # Zipen
     syncthing # Dateisynchronisierung
