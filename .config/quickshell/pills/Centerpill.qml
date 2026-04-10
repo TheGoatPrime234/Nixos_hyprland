@@ -9,14 +9,22 @@ import "./../color"
 import "./../widgets"
 
 Rectangle {
-
+    anchors.centerIn: parent
     implicitWidth: cpill.implicitWidth + Theme.impW
     implicitHeight: Theme.h2
     radius: Theme.rad
+    border {
+	width: 1
+	color: Theme.bg2
+    }
     color: Theme.bg0
     Row {
         id: cpill
-        anchors.centerIn: parent
+	anchors {
+	    centerIn: parent
+	    margins: Theme.outmrg
+	    verticalCenter: parent.verticalCenter
+	}
         spacing: Theme.spc2
         Uhr1 {
         }

@@ -41,8 +41,9 @@ Rectangle {
                     horizontalAlignment: Text.AlignHCenter
                     verticalAlignment: Text.AlignVCenter
                     font {
-                        pixelSize: 14;
+                        pixelSize: Theme.t1;
                         bold: true
+			family: Theme.fnt
                     }
                     text: index + 1
                 }

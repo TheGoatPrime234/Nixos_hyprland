@@ -27,4 +27,14 @@ QtObject {
 	property real h4: 24
 	property real h5: 16
 	property real h6: 8
+
+	// Text
+	property var fnt: "GeistMono Nerd Font Propo" 
+	property real t1: 14
+	property real t2: 12 
+	property real t3: 10 
+	property real t4: 8 
+
+	// Sondervariablen
+	property real cavaw: 8
 }

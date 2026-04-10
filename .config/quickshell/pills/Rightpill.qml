@@ -9,21 +9,30 @@ import "./../color"
 import "./../widgets"
 
 Rectangle {
+    anchors.verticalCenter: parent.verticalCenter
     implicitWidth: rpill.implicitWidth + Theme.impW
     implicitHeight: Theme.h2
+    border {
+	width: 1
+	color: Theme.bg2
+    }
     radius: Theme.rad
     color: Theme.bg0
-    Row {
+    RowLayout {
         id: rpill
-        anchors.verticalCenter: parent.verticalCenter
-        spacing: Theme.spc1
+	anchors {
+	    fill: parent
+	    margins: Theme.outmrg
+	    verticalCenter: parent.verticalCenter
+	}
+        spacing: Theme.spc2
         Audio {
         }
         Wifi {
         }
-        Battery {
-        }
-        Notification {
-        }
+	Battery {
+	}
+	Notification {
+	}
     }
 }

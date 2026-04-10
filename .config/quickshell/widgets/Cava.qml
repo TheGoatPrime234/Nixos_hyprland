@@ -10,7 +10,7 @@ Rectangle {
 	verticalCenter: parent.verticalCenter
     }
     height: Theme.h3
-    implicitWidth: cavabars.implicitWidth + (Theme.impW * 2.5) 
+    implicitWidth: ((Theme.cavaw + 2) * 16) + (Theme.impW * 2.5)
     border {
         width: 1
         color: Theme.bg2
@@ -42,7 +42,7 @@ Rectangle {
 	    Repeater {
 		model: cava.bars
 		Rectangle {
-		    width: 8
+		    width: Theme.cavaw
 		    height: cava.height
 		    color: Theme.trans
 

@@ -3,8 +3,6 @@ import Quickshell.Io
 import QtQuick
 import QtQuick.Layouts
 import Quickshell
-import Quickshell.Wayland
-import Quickshell.Hyprland
 import "./../color"
 import "./Leftpill.qml"
 import "./Centerpill.qml"

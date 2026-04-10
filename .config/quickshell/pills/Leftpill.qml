@@ -7,7 +7,6 @@ import Quickshell.Wayland
 import Quickshell.Hyprland
 import "./../color"
 import "./../widgets"
-import "./../widgets"
 
 Rectangle {
     anchors.verticalCenter: parent.verticalCenter
