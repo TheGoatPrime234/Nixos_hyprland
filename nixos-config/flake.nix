@@ -30,6 +30,7 @@
 	./programs.nix
 	./services.nix
 	./hardware.nix
+	./boot.nix
 
 	# Add-Ons  
 	./pixiesddm.nix
