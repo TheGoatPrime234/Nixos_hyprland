@@ -3,7 +3,7 @@
 {
   environment.systemPackages = with pkgs; [
     # System & Tools
-    neovim # Editor
+    #neovim --> Nixvim
     wget # 
     fastfetch # Fastfetch halt
     git # Versionierung
