@@ -10,7 +10,8 @@
       shiftwidth = 4;
     };
 
-    colorschemes.catppuccin.enable = true;
+#    colorschemes.catppuccin.enable = true;
+#    colorschemes.everforest.enable = true;
 
     plugins = {
       lualine.enable = true;
