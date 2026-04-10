@@ -6,12 +6,6 @@
       ./hardware-configuration.nix
     ];
 
-#  boot.loader.efi.canTouchEfiVariables = true;
-#  boot.loader.systemd-boot.enable = true;
-
-#  boot.kernelPackages = pkgs.linuxPackages_6_12;
-#  boot.kernelParams = [ "btusb.enable_autosuspend=0" ];
-
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   security.pam.services.sddm.enableKwallet = true;
   networking.networkmanager.enable = true;
