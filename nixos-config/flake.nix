@@ -6,6 +6,7 @@
     nixpkgs-25-11.url = "github:nixos/nixpkgs/nixos-25.11";
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
+    nixvim.url = "github:nix-community/nixvim/nixos-25.11";
   };
 
   outputs = { self, nixpkgs, ... }@inputs: {
@@ -13,6 +14,10 @@
       system = "x86_64-linux";
       specialArgs = { inherit inputs; };
       modules = [
+	# Inputs
+        inputs.spicetify-nix.nixosModules.default
+	inputs.nixvim.nixosModules.default
+
 	# Wichtig
         ./hardware-configuration.nix
 
@@ -30,8 +35,7 @@
 	./pixiesddm.nix
         ./spicetify.nix
 	./zen-browser.nix
-
-        inputs.spicetify-nix.nixosModules.default
+	./nixvim.nix
       ];
     };
   };
