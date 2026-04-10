@@ -1,8 +1,7 @@
 import Quickshell
 import Quickshell.Io
 import QtQuick
-import QtQuick.Layouts
-import Quickshell
+import Quickshell.Services.Mpris
 import "./../color"
 
 Rectangle {
@@ -53,6 +52,15 @@ Rectangle {
 			color: Theme.ac1
 		    }
 		}
+	    }
+	}
+    }
+    MouseArea {
+	anchors.fill: parent
+	onClicked: {
+	    var activePlayers = Mpris.players.values
+	    if (activePlayers.length > 0) {
+		activePlayers[0].togglePlaying()
 	    }
 	}
     }

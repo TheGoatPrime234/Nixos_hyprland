@@ -1,8 +1,6 @@
 import Quickshell
-import Quickshell.Io
 import QtQuick
 import QtQuick.Layouts
-import Quickshell
 import "./../color"
 import "./Leftpill.qml"
 import "./Centerpill.qml"

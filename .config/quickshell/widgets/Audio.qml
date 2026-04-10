@@ -1,10 +1,6 @@
 import Quickshell
-import Quickshell.Io
+import Quickshell.Services.Pipewire
 import QtQuick
-import QtQuick.Layouts
-import Quickshell
-import Quickshell.Wayland
-import Quickshell.Hyprland
 import "./../color"
 
 Rectangle {
@@ -17,6 +13,9 @@ Rectangle {
 	color: Theme.bg2
     }
     color: Theme.bg1
+    PwObjectTracker {
+	objects: [ Pipewire.defaultAudioSink ]
+    }
     Text {
         id: rpillchild1
         anchors.centerIn: parent
@@ -29,6 +28,16 @@ Rectangle {
 	    family: Theme.fnt
 	}
 	color: Theme.ac1
-        text: "Audio"
+	text: Pipewire.defaultAudioSink != null && Pipewire.defaultAudioSink.audio != null 
+		      ? Math.round(Pipewire.defaultAudioSink.audio.volume * 100) + "%" 
+		      : "0%"
+    }
+    MouseArea {
+        anchors.fill: parent
+        onClicked: {
+            if (Pipewire.defaultAudioSink != null && Pipewire.defaultAudioSink.audio != null) {
+                Pipewire.defaultAudioSink.audio.muted = !Pipewire.defaultAudioSink.audio.muted
+            }
+        }
     }
 }
