@@ -11,7 +11,8 @@
     };
 
 #    colorschemes.catppuccin.enable = true;
-#    colorschemes.everforest.enable = true;
+    colorschemes.everforest.enable = true;
+    colorschemes.everforest.autoLoad = true;
 
     plugins = {
       lualine.enable = true;
