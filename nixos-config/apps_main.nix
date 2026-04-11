@@ -51,5 +51,9 @@
     rofi                   # Appmenu
     cava                   # Musikvisualisierung 
     playerctl              # Musikplayer integrationen
+    # Cybersec 
+    aircrack-ng
+    metasploit
+    nmap
   ];
 }
